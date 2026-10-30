@@ -7,12 +7,16 @@ class AppRoutes {
   static const initialRoute = '/';
 
   static Map<String, Widget Function(BuildContext)> routes = {
-    '/listtile' : (BuildContext context) => const ListtileScreen(),
     '/' : (BuildContext context) => const HomeScreen(),
+    '/listtile' : (BuildContext context) => const ListtileScreen(),
+    '/card' : (BuildContext context) => const CardScreen(),
+    '/alert' : (BuildContext context) => const AlertScreen(),
   };
 
   static final menuOptions = <MenuOptions>[
     MenuOptions(route: '/listtile', name: 'Pantalla de ListTile', icon: Icons.list_alt_rounded, screen: const ListtileScreen()),
+    MenuOptions(route: '/card', name: 'Pantalla de Cards', icon: Icons.card_membership_rounded, screen: const CardScreen()),
+    MenuOptions(route: '/alert', name: 'Pantalla de Alertas', icon: Icons.warning_rounded, screen: const AlertScreen()),
   ];
 
 }

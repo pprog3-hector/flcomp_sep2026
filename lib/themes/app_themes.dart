@@ -14,7 +14,7 @@ class AppThemes {
       centerTitle: true,
       backgroundColor: primary
     ),
-    // textTheme: GoogleFonts.interTextTheme()
+    textTheme: GoogleFonts.outfitTextTheme()
 
   );
 
@@ -28,7 +28,7 @@ class AppThemes {
       backgroundColor: primary,
       foregroundColor: Colors.black
     ),
-    // textTheme: GoogleFonts.interTextTheme()
+    textTheme: GoogleFonts.outfitTextTheme()
   );
 
 }

@@ -9,11 +9,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inicio'),
+        title: const Text('Inicio'),
       ),
       body: ListView.separated(
         itemCount: AppRoutes.menuOptions.length,
-        //Se colocan guines bajos cuando no se necesita del context y/o index
+        //Se colocan guiones bajos cuando no se necesita del context y/o index
         separatorBuilder: (_, __) => const Divider(), 
         itemBuilder: (BuildContext context, int index){
           return ListTile(
@@ -26,5 +26,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-//SingleChildScrollView
