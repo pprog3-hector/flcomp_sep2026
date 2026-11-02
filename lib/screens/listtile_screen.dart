@@ -10,16 +10,16 @@ class ListtileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pantalla de ListTile'),
+        title: const Text('Pantalla de ListTile'),
       ),
       body: ListView(
         children: [
           ...musica.map(
             (generos) => ListTile(
               title: Text(generos),
-              subtitle: Text('Es un genero musical'),
-              leading: CircleAvatar(child: Icon(Icons.music_note_rounded)),
-              trailing: Icon(Icons.keyboard_arrow_right),
+              subtitle: const Text('Es un genero musical'),
+              leading: const CircleAvatar(child: Icon(Icons.music_note_rounded)),
+              trailing: const Icon(Icons.keyboard_arrow_right),
               onTap: (){
                 print(generos);
               },
