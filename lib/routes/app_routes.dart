@@ -14,6 +14,8 @@ class AppRoutes {
     '/alert' : (BuildContext context) => const AlertScreen(),
     '/dependencies' : (BuildContext context) => const DependenciesScreen(),
     '/container' : (BuildContext context) => const ContainerScreen(),
+    '/slider' : (BuildContext context) => const SliderScreen(),
+    '/infinite' : (BuildContext context) => const InfiniteScrollScreen(),
   };
 
   static final menuOptions = <MenuOptions>[
@@ -22,6 +24,8 @@ class AppRoutes {
     MenuOptions(route: '/alert', name: 'Pantalla de Alertas', icon: FontAwesomeIcons.triangleExclamation, screen: const AlertScreen()),
     MenuOptions(route: '/dependencies', name: 'Pantalla de Dependencias', icon: FontAwesomeIcons.cube, screen: const DependenciesScreen()),
     MenuOptions(route: '/container', name: 'Pantalla de Container', icon: FontAwesomeIcons.boxOpen, screen: const ContainerScreen()),
+    MenuOptions(route: '/slider', name: 'Pantalla de Sliders y Checks', icon: FontAwesomeIcons.toggleOn, screen: const SliderScreen()),
+    MenuOptions(route: '/infinite', name: 'Pantalla de Scroll infinito', icon: FontAwesomeIcons.infinity, screen: const InfiniteScrollScreen()),
   ];
 
 }
