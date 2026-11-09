@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class SliderScreen extends StatefulWidget {
    
-  const SliderScreen({Key? key}) : super(key: key);
+  const SliderScreen({super.key});
 
   @override
   State<SliderScreen> createState() => _SliderScreenState();

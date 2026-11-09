@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ContainerScreen extends StatefulWidget {
@@ -51,8 +50,8 @@ class _ContainerScreenState extends State<ContainerScreen> {
          ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        label: Text('Cambiar forma'),
-        icon: FaIcon(FontAwesomeIcons.play, size: 20,),
+        label: const Text('Cambiar forma'),
+        icon: const FaIcon(FontAwesomeIcons.play, size: 20,),
         onPressed: (){
           changeShape();
         },

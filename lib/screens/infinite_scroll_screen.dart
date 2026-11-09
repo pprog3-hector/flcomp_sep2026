@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class InfiniteScrollScreen extends StatefulWidget {
    
-  const InfiniteScrollScreen({Key? key}) : super(key: key);
+  const InfiniteScrollScreen({super.key});
 
   @override
   State<InfiniteScrollScreen> createState() => _InfiniteScrollScreenState();
@@ -42,11 +42,11 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
   }
 
   void add10(){
-      final lastId = imageIDs.last;
-      imageIDs.addAll(
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e) => lastId + e),
-      );
-    }
+    final lastId = imageIDs.last;
+    imageIDs.addAll(
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e) => lastId + e),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

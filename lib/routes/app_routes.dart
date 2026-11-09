@@ -16,6 +16,7 @@ class AppRoutes {
     '/container' : (BuildContext context) => const ContainerScreen(),
     '/slider' : (BuildContext context) => const SliderScreen(),
     '/infinite' : (BuildContext context) => const InfiniteScrollScreen(),
+    '/input' : (BuildContext context) => const InputScreen(),
   };
 
   static final menuOptions = <MenuOptions>[
@@ -26,6 +27,7 @@ class AppRoutes {
     MenuOptions(route: '/container', name: 'Pantalla de Container', icon: FontAwesomeIcons.boxOpen, screen: const ContainerScreen()),
     MenuOptions(route: '/slider', name: 'Pantalla de Sliders y Checks', icon: FontAwesomeIcons.toggleOn, screen: const SliderScreen()),
     MenuOptions(route: '/infinite', name: 'Pantalla de Scroll infinito', icon: FontAwesomeIcons.infinity, screen: const InfiniteScrollScreen()),
+    MenuOptions(route: '/input', name: 'Pantalla de Inputs', icon: FontAwesomeIcons.solidKeyboard, screen: const InputScreen()),
   ];
 
 }

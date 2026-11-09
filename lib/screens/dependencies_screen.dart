@@ -1,12 +1,10 @@
 import 'package:flcomp_sep2026/themes/app_themes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_launcher_icons/xml_templates.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class DependenciesScreen extends StatefulWidget {
    
-  const DependenciesScreen({Key? key}) : super(key: key);
+  const DependenciesScreen({super.key});
 
   @override
   State<DependenciesScreen> createState() => _DependenciesScreenState();
@@ -37,7 +35,7 @@ class _DependenciesScreenState extends State<DependenciesScreen> {
         tabBackgroundColor: Colors.grey[300]!,
         activeColor: Colors.black,
         rippleColor: AppThemes.primary,
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
         gap: 5,
         selectedIndex: _index,
         onTabChange: (value){
@@ -46,15 +44,15 @@ class _DependenciesScreenState extends State<DependenciesScreen> {
           });
         },
         tabs: [
-          GButton(
+          const GButton(
             icon: Icons.home_rounded,
             text: 'Menu',
           ),
-          GButton(
+          const GButton(
             icon: Icons.search_rounded,
             text: 'Buscar',
           ),
-          GButton(
+          const GButton(
             icon: Icons.person_rounded,
             text: 'Mi Perfil',
           ),
@@ -66,11 +64,11 @@ class _DependenciesScreenState extends State<DependenciesScreen> {
 
 //Vista de home
 class _HomeView extends StatelessWidget {
-  const _HomeView({super.key});
+  const _HomeView();
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('1'),
     );
   }
@@ -78,11 +76,11 @@ class _HomeView extends StatelessWidget {
 
 //Vista del buscador
 class _SearchView extends StatelessWidget {
-  const _SearchView({super.key});
+  const _SearchView();
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('2'),
     );
   }
@@ -90,11 +88,11 @@ class _SearchView extends StatelessWidget {
 
 //Vista del perfil
 class _ProfileView extends StatelessWidget {
-  const _ProfileView({super.key});
+  const _ProfileView();
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('3'),
     );
   }
