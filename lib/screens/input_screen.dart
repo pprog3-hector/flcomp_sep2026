@@ -1,5 +1,6 @@
 import 'package:flcomp_sep2026/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InputScreen extends StatefulWidget {
@@ -11,6 +12,62 @@ class InputScreen extends StatefulWidget {
 }
 
 class _InputScreenState extends State<InputScreen> {
+
+  final _formKey = GlobalKey<FormState>();
+
+  final _nombreController = TextEditingController();
+  final _apellidoController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  final Map<String, String> _formValues = {
+
+    'nombre' : '',
+    'apellido' : '',
+    'email' : '',
+    'password' : ''
+
+  };
+
+  void _comprobarFormValues(){
+    _formValues['nombre'] = _nombreController.text.trim();
+    _formValues['apellido'] = _apellidoController.text.trim();
+    _formValues['email'] = _emailController.text.trim();
+    _formValues['password'] = _passwordController.text.trim();
+  }
+
+  bool get _formCompleto {
+    return _nombreController.text.trim().isNotEmpty &&
+     _apellidoController.text.trim().isNotEmpty &&
+      _emailController.text.trim().isNotEmpty &&
+       _passwordController.text.trim().isNotEmpty;
+  }
+
+  void _enviarForm(){
+    setState(() {
+      if(!(_formKey.currentState?.validate() ?? false)){
+        return;
+      }
+      _comprobarFormValues();
+      print(_formValues);
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(16)),
+          behavior: SnackBarBehavior.fixed,
+          content: Row(
+            children: [
+              Icon(Icons.check_circle_outline_rounded, color: Colors.white),
+              SizedBox(width: 5),
+              Text('Informacion enviada con exito.'),
+            ],
+          )
+        )
+      );
+
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +78,7 @@ class _InputScreenState extends State<InputScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Form(
+            key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,6 +89,7 @@ class _InputScreenState extends State<InputScreen> {
                   children: [
                     Expanded(
                       child: CustomInput(
+                        textController: _nombreController,
                         icon: Icons.person,
                         labelText: 'Nombre',
                         hintText: 'Ingresa tu nombre',
@@ -41,6 +100,7 @@ class _InputScreenState extends State<InputScreen> {
                     SizedBox(width: 12),
                     Expanded(
                       child: CustomInput(
+                        textController: _apellidoController,
                         icon: Icons.person,
                         labelText: 'Apellido',
                         hintText: 'Ingresa tu apellido',
@@ -51,6 +111,7 @@ class _InputScreenState extends State<InputScreen> {
                   ],
                 ),
                 CustomInput(
+                  textController: _emailController,
                   labelText: 'Correo Electronico', 
                   hintText: 'Escribe tu email', 
                   icon: Icons.email_rounded, 
@@ -58,12 +119,14 @@ class _InputScreenState extends State<InputScreen> {
                   textInputType: TextInputType.emailAddress
                 ),
                 CustomInput(
-                  labelText: 'Contrasena', 
-                  hintText: 'Escribe tu contrasena', 
+                  textController: _passwordController,
+                  labelText: 'Contraseña', 
+                  hintText: 'Escribe tu contraseña', 
                   icon: Icons.password_rounded, 
                   obscureText: true, 
                   textInputType: TextInputType.visiblePassword
                 ),
+                const SizedBox(height: 10),
                 FilledButton(
                   style: FilledButton.styleFrom(
                     padding: EdgeInsets.symmetric(vertical: 14),
@@ -71,7 +134,7 @@ class _InputScreenState extends State<InputScreen> {
                       borderRadius: BorderRadiusGeometry.circular(12)
                     )
                   ),
-                  onPressed: (){}, 
+                  onPressed: _enviarForm, 
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
